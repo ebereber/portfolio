@@ -1,7 +1,8 @@
-import { Divider, Flex, keyframes, Text } from '@chakra-ui/react'
+import { Divider, Flex, Heading, Icon, keyframes, Text } from '@chakra-ui/react'
 import React from 'react'
 import Footer from './Footer'
 import Nav from './navigation/Nav'
+import { FiPaperclip } from 'react-icons/fi'
 
 const fade = keyframes`
   from {opacity: 0}
@@ -61,6 +62,28 @@ function Aside() {
             ))}
           </Flex>
         </Flex>
+      </Flex>
+      <Flex
+        border="1px solid black"
+        borderRadius={'1rem'}
+        px="1.5rem"
+        py="1.25rem"
+        flexDir={'column'}
+        borderColor="gray.300"
+        fontSize={'.75rem'}
+        lineHeight="1rem"
+      >
+        <Flex align={'center'} color="gray.500">
+          <Icon as={FiPaperclip} mr=".5rem" fontSize={'1.1rem'} />
+          <Text fontWeight={'semibold'}>ABOUT ME</Text>
+        </Flex>
+
+        <Divider my=".5rem" />
+
+        <Text>
+          Hi! I`m a web developer from Córdoba, Argentina. I like design, programming, pizza and
+          music.
+        </Text>
       </Flex>
       <Footer />
     </Flex>
