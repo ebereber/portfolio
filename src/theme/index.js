@@ -9,8 +9,8 @@ const theme = extendTheme({
     }
   },
   fonts: {
-    heading: 'Roboto, sans-serif',
-    body: 'Roboto, sans-serif'
+    heading: 'Roboto, Amiri, sans-serif',
+    body: 'Roboto, Amiri, serif'
   }
 })
 
