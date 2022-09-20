@@ -1,8 +1,9 @@
-import { Divider, Flex, Heading, Icon, keyframes, Text } from '@chakra-ui/react'
+import { Divider, Flex, Heading, Icon, keyframes, Link, Text } from '@chakra-ui/react'
 import React from 'react'
 import Footer from './Footer'
 import Nav from './navigation/Nav'
 import { FiPaperclip } from 'react-icons/fi'
+import { Link as RouterLink } from 'react-router-dom'
 
 const fade = keyframes`
   from {opacity: 0}
@@ -81,8 +82,11 @@ function Aside() {
         <Divider my=".5rem" />
 
         <Text>
-          Hi! I`m a web developer from Córdoba, Argentina. I like design, programming, pizza and
-          music.
+          Hi! I´m a web developer from Córdoba, Argentina. I like design, programming, pizza and
+          music. Currently looking for work experience, so if you are interested you can {''}
+          <Link color={'black'} fontWeight="bold" to="/contact" as={RouterLink}>
+            contact me.{' '}
+          </Link>
         </Text>
       </Flex>
       <Footer />

@@ -2,7 +2,7 @@ import { Flex, keyframes } from '@chakra-ui/react'
 
 import React from 'react'
 
-import Nav from '../components/navigation/Nav'
+import Nav from './navigation/Nav'
 
 const fade = keyframes`
   from {opacity: 0}

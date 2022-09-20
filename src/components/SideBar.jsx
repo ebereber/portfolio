@@ -34,9 +34,14 @@ export default function SideBar() {
       top="0"
     >
       <Flex h="80" alignItems="start" mx="8" mt={6} justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold" >
+        <Link as={LinkRouter} to="/" fontSize="2xl" fontFamily="monospace" fontWeight="bold" cursor="pointer"
+        
+        _hover={{
+         color: 'gray.400',
+         
+       }} >
           />
-        </Text>
+        </Link>
       </Flex>
       <Flex flexDirection={"column"}>
       {LinkItems.map((link) => (
