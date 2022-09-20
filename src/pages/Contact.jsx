@@ -25,7 +25,6 @@ function Contact() {
   const messageRef = useRef()
   const [error, setError] = useState(null)
   const [toastMessage, setToastMessage] = useState(undefined)
-  const [response, setResponse] = useState(false)
   const [loading, setLoading] = useState(false)
   const toast = useToast()
   const navigate = useNavigate()
