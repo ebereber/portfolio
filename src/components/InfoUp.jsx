@@ -3,6 +3,18 @@ import { Box, Flex, Link, Text } from '@chakra-ui/react'
 import React from 'react'
 
 function InfoUp() {
+  const download = () => {
+    fetch('Resume-Eber-Leguizamon.pdf').then((response) => {
+      response.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob)
+        let alink = document.createElement('a')
+        alink.href = fileURL
+        alink.download = 'Resume-Eber-Leguizamon.pdf'
+        alink.click()
+      })
+    })
+  }
+
   return (
     <Box mx="auto" p="1.5rem">
       <Box h="100%" px="8px">
@@ -10,7 +22,7 @@ function InfoUp() {
           <Flex maxW={'728px'} p="12px">
             <Text fontWeight="normal" fontSize=".85rem" lineHeight={'1rem'}>
               So glad you're here 😊.
-              <Link>
+              <Link onClick={download}>
                 {' '}
                 You can{' '}
                 <Text as="span" fontWeight={'bold'}>
