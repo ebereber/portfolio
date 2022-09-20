@@ -8,16 +8,27 @@ import {
   Select,
   Stack,
   Text,
-  Textarea
+  Textarea,
+  useToast
 } from '@chakra-ui/react'
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { validation } from '../utils/formValidation'
 
 function Contact() {
   const nameRef = useRef()
   const emailRef = useRef()
   const subjectRef = useRef()
   const messageRef = useRef()
+  const [error, setError] = useState(null)
+  const [toastMessage, setToastMessage] = useState(undefined)
+  const [response, setResponse] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const toast = useToast()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -27,13 +38,54 @@ function Contact() {
       subject: subjectRef.current.value,
       message: messageRef.current.value
     }
-    return console.log(data)
+    const errors = validation(data)
+    if (errors != null) {
+      setError(errors)
+      return
+    }
+
+    setError(null)
+    setLoading(true)
+    axios.defaults.headers.post['Content-Type'] = 'application/json'
+    axios
+      .post('https://email-api-pi.vercel.app/api/send-email', data)
+      .then((res) => {
+        setLoading(false)
+        setToastMessage({
+          title: 'Message sent',
+          body: 'I will be in contact as soon as possible'
+        })
+      })
+      .catch((err) =>
+        setToastMessage({
+          title: 'Oops.. An error ocurred',
+          body: 'Please try again later'
+        })
+      )
   }
+
+  useEffect(() => {
+    if (toastMessage) {
+      const { title, body } = toastMessage
+      toast({
+        title,
+        description: body,
+
+        duration: 3000,
+        isClosable: true,
+        onCloseComplete: () => {
+          navigate('/', { replace: true })
+        }
+      })
+    }
+  }, [toastMessage, toast])
 
   return (
     <Flex pb="5rem" flexDirection="column" width={'100%'}>
       <Flex flexDir={'column'} pt={'2rem'} pb="4rem">
-        <Text color={'gray.500'}>Ask me anything!</Text>
+        <Text color={'gray.500'} fontFamily="Amiri" fontStyle={'italic'}>
+          Ask me anything!
+        </Text>
         <Heading
           fontSize={{
             base: '4xl',
@@ -52,6 +104,13 @@ function Contact() {
         fontWeight={'normal'}
         onSubmit={handleSubmit}
       >
+        <Flex>
+          {error && (
+            <Text as="span" p="15px 18px" bg="#ffebee" w="full" borderRadius={'lg'} color="#ff3852">
+              {error}
+            </Text>
+          )}
+        </Flex>
         <Flex flexDir={{ base: 'column', lg: 'row' }}>
           <FormControl mr={'1rem'}>
             <FormLabel>Your name </FormLabel>
@@ -99,17 +158,32 @@ function Contact() {
             ref={messageRef}
           />
         </FormControl>
+
         <Flex mt="2rem">
-          <Button
-            bg="black"
-            color={'white'}
-            width={{ base: '100%', sm: '100%', md: '30%', lg: '30%' }}
-            minW="220px"
-            _hover={{ bg: 'white', color: 'black', border: '1px solid black' }}
-            type="submit"
-          >
-            Send
-          </Button>
+          {loading ? (
+            <Button
+              isLoading
+              bg="black"
+              color={'white'}
+              width={{ base: '100%', sm: '100%', md: '30%', lg: '30%' }}
+              minW="220px"
+              _hover={{ bg: 'blackAlpha.800' }}
+              type="submit"
+            >
+              Send
+            </Button>
+          ) : (
+            <Button
+              bg="black"
+              color={'white'}
+              width={{ base: '100%', sm: '100%', md: '30%', lg: '30%' }}
+              minW="220px"
+              _hover={{ bg: 'blackAlpha.800' }}
+              type="submit"
+            >
+              Send
+            </Button>
+          )}
         </Flex>
       </Stack>
     </Flex>

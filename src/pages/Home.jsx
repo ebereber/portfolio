@@ -1,82 +1,170 @@
-import { Badge, Box, Heading, HStack, Link, Stack, Text } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { Box, Flex, Heading, Image, Link, Stack, Text } from '@chakra-ui/react'
+import dashApp from '../assets/dash6.svg'
+import balance from '../assets/balance10.svg'
+import img from '../assets/dev1.svg'
+import reactImg from '../assets/react.svg'
+import obstacle from '../assets/obstacle1.svg'
+import { Link as RouterLink } from 'react-router-dom'
 
 function Home() {
-  const [short, setShort] = useState(true)
-
   return (
     <Box
       layerStyle="selected"
       /*  px={{ base: '2rem', sm: '4rem', md: '8', lg: '10' }} */
     >
-      <Heading fontSize={'5xl'} pt={'2rem'} fontWeight="800">
-        My journey as a developer
-      </Heading>
-      <Text fontSize={'1rem'} fontStyle="italic" color={'gray'}>
-        Soy un desarrollador argentino, que empezó hace mas de asdasdasdas asdasdas asdfasdas asdas
-      </Text>
-      <Box my={8}>{/*  <Image src={} /> */}</Box>
-      <HStack>
-        <Link onClick={() => setShort(true)}>
-          <Badge colorScheme="green">Short</Badge>
-        </Link>
-        <Link onClick={() => setShort(false)}>
-          <Badge colorScheme={'purple'}>Large</Badge>
-        </Link>
-      </HStack>
-      <Stack mt={'2rem'}>
-        <Text fontSize={'xl'} fontStyle="italic" color={'gray.400'}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis libero dignissimos,
-          dolorem voluptatibus animi tenetur illum.
+      <Flex flexDir={'column'} pt={'2rem'} pb="2rem">
+        <Text color={'gray.500'} fontFamily="Amiri" fontStyle={'italic'}>
+          A little history
         </Text>
-        <br />
-        {short ? (
+        <Heading
+          fontSize={{
+            base: '4xl',
+            md: '5xl'
+          }}
+          mb="1rem"
+          fontWeight="900"
+        >
+          My background as developer
+        </Heading>
+        <Text fontSize={'md'} fontStyle="italic" color={'gray.500'}>
+          Something about my growth in this programing world, and how in three months I didn't
+          become a developer.
+        </Text>
+      </Flex>
+      <Box mb={8}>
+        {' '}
+        <Image src={img} />
+      </Box>
+      <Stack mt={'2rem'} fontFamily="Amiri" fontSize={'18px'}>
+        <>
           <Text>
-            Hola! Soy un developer argentino que viene estudiando y trabajando diariamente para
-            crecer como desarrollador. Me agrada mucho el diseño y trato de cuidar puntualmente eso
-            en cada proyecto que hago. El diseño engloba mucho más que algo estéticamente bonito, la
-            usabilidad y la permofance son pilares fundamentales que trato de no dejar de lado,
-            haciendo uso de buenas prácticas y de tecnologías actuales a la hora de codear.
-          </Text>
-        ) : (
-          <>
-            <Text letterSpacing="-0.003em">
-              Comencé a transitar el camino del programador hace más de un año y me vi envuelto en
-              un sin fin de trabas y frustraciones que hasta el día de hoy no cesan, pero aprendí
-              que todo eso es parte del proceso de aprendizaje y que si bien al principio todo puede
-              verse complicado y oscuro, con el paso de el tiempo y la constancia todo comienza a
-              ser más simple.
-              <br />
-              <br />
-              <Text fontWeight={'bold'}>Ejkbksjabdsasadsadasdasdasd </Text>
-              <br />
-              Cada proyecto que realizo es una instancia de aprendizaje en la que voy implementando
-              siempre una nueva tecnología. Claro que existen infinidades de estas y a lo largo del
-              camino uno va tomando decisiones acerca de el stack con el que va desarrollar. En este
-              caso React es mi herramienta predilecta, a la cual le he dedicado muchas horas de
-              trabajo. Ahora para que React funcione correctamente necesitamos comprender y
-              configurar el ecosistema que lo rodea, establecer el routing de la aplicación, definir
-              el styling, adicionar Redux y mucho más, pero esto lo dejo para el apartado de Tools.
-              <br />
-              <br />
-              <Text fontWeight={'bold'}>Ejkbksjabdsasadsadasdasdasd </Text>
-              <br />
-              Mis primeros proyectos comenzaron teniendo una base de datos simple proporcionada por
-              la plataforma de firebase, que brinda facilidad a la hora persister datos y quita la
-              complejidad de levantar un servidor. Debía enfocarme en una cosa a la vez. Si en un
-              comienzo el front era complicado para mí - html, css, javascript -, sumarle el back
-              hubiese sido muy caótico, por lo que firebase fue una opción viable.
-              <br />
-              <br />
-              Más tarde comencé a crear mis propios servidores y a implementar bases de datos SQL y
-              NoSQL, lo que me permitió profundizar y entender una gran cantidad conceptos y
-              funciones que hasta el momento ignoraba.
-              <br />
-              <br />
-              Actualmente mi stack es simple pero poderoso.
+            <Text as="span" fontSize={'1.5rem'} fontWeight="bold">
+              I
             </Text>
-          </>
-        )}
+            {''} was also one of those who believed that in three months I could find a job as a
+            developer. That belief, when I understood the complexity of the matter, ended up fading
+            away after a short time. It didn't hurt to hit the wall and ask myself if the premise
+            that in three months you can get a job is real.
+            <br />
+            <br />
+            Surely there are those who succeeded and deserve to be applauded, because they probably
+            put all the effort, or have known with great wisdom to avoid the recruiters' filters.
+            But you have to understand that it is very likely that in three, six months or more, you
+            will not be ready for your first job, and it is not a bad thing. And this is something
+            that I am actually writing for myself. I am in that stage, in that search after being
+            studying, practicing and developing for more than a year. Of course, the time it takes
+            to 'be ready' is relative, the learning curve will vary depending on the rhythms and
+            capabilities of each one. <br />
+            <br />
+          </Text>
+          <Text fontWeight={'bold'}>What does it mean to be ready?</Text>
+          <br />
+          <Box mb={8}>
+            {' '}
+            <Image src={obstacle} />
+          </Box>
+          <Text>
+            Well I do not have the answer, the most accurate, in my experience, would be to say that
+            you are never ready, and this is something I understood recently and I want to share.
+            <br /> Many times, those of us who want to have control over everything, to be super
+            prepared, make the mistake of feeling that the road we have traveled is not enough to
+            achieve our goal, that we are not ready to take the next step. Insecurities and fears
+            start to play against us, and we begin to measure every step we take. Of course,
+            overcoming this requires a lot of work, but when we realize that the inadequacy we feel
+            is the same that is preventing us from growing, in this particular case, as a developer,
+            we put a limit to those thoughts and decide that we are ready to take the next step.
+          </Text>
+          <br />
+          <Text fontWeight={'bold'}>Time and patience are critical</Text>
+          <br />
+          <Text>
+            At the beginning, everything may seem complicated and confusing, but with time and
+            consistency, everything starts to become simpler.
+          </Text>
+          <br />
+          <Text fontWeight={'bold'}>Learning process</Text>
+          <Box my={8}>
+            {' '}
+            <Image src={reactImg} />
+          </Box>
+          <Text>
+            Each project I do is an instance of learning in which I am always implementing a new
+            technology. Of course there are many of these and along the way you make decisions about
+            the tools you incorporate to your stack. In this case React is my favorite, to which I
+            have dedicated hundreds of hours of work.
+          </Text>
+
+          <br />
+          <Text fontWeight={'bold'}>Early projects</Text>
+          <br />
+          <Text>
+            My first projects started with a simple database provided by firebase platform, which
+            makes it easy to persist data and removes the complexity of setting up a server. I had
+            to focus on one thing at a time.{' '}
+            <Link as={RouterLink} to="/projects" fontWeight={'bold'}>
+              Check out my portfolio for more details.
+            </Link>
+          </Text>
+          <br />
+
+          <Flex py="1.25rem" bg="#6bcba8" px="2rem" justify="center" alignContent={'center'}>
+            <Flex w="10rem" h={'auto'}>
+              <Image src={dashApp} objectFit="cover" />
+            </Flex>
+            <Flex
+              flexDir={'column'}
+              flex="1 1 auto"
+              ml="1rem"
+              justify={'center'}
+              display={{ base: 'none', sm: 'none', md: 'flex', lg: 'flex' }}
+            >
+              <Heading fontSize={'1.25rem'}>Ecommerce</Heading>
+              <Text fontSize={'.875rem'}>Web site for a lighting factory.</Text>
+            </Flex>
+          </Flex>
+          <br />
+          <Text mr={'2rem'}>
+            This one is pretty simple, it contains a home page that shows the products, a product
+            detail page, shopping cart and check out. It was styled with style components and used
+            firebase as a NoSQL database.
+          </Text>
+          <br />
+
+          <Flex py="1.25rem" bg="#ffd6c1" px="2rem" justify="center" alignContent={'center'}>
+            <Flex w="10rem" h={'auto'}>
+              <Image src={balance} objectFit="cover" />
+            </Flex>
+            <Flex
+              flexDir={'column'}
+              flex="1 1 auto"
+              ml="1rem"
+              justify={'center'}
+              display={{ base: 'none', sm: 'none', md: 'flex', lg: 'flex' }}
+            >
+              <Heading fontSize={'1.25rem'}>Personal Finance App</Heading>
+              <Text fontSize={'.875rem'}>Allows you to keep track your income and expenses.</Text>
+            </Flex>
+          </Flex>
+          <br />
+          <Text>
+            Later I started to create my own servers and implement SQL and NoSQL databases, which
+            allowed me to dig deeper and understand a lot of concepts and functions that I had
+            ignored so far. The next project was a personal finance app. It was made with React,
+            Chakra-ui , Express and MySql as a noSql database.
+          </Text>
+          <br />
+          <Text fontWeight={'bold'}>Finally</Text>
+          <br />
+          <Text>
+            I am still working on improving, I know I have a lot to learn, but I feel ready to have
+            a real work experience. {''}
+            <Link as={RouterLink} to="/contact" fontWeight={'bold'}>
+              If you are interested you can contact me.
+            </Link>{' '}
+            <br />
+            Thanks for reading.
+          </Text>
+        </>
       </Stack>{' '}
     </Box>
   )
