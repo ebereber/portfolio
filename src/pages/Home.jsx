@@ -13,9 +13,9 @@ function Home() {
       /*  px={{ base: '2rem', sm: '4rem', md: '8', lg: '10' }} */
     >
       <Flex flexDir={'column'} pt={'2rem'} pb="2rem">
-        <Text color={'gray.500'} fontFamily="Amiri" fontStyle={'italic'}>
-          A little history
-        </Text>
+        {/* <Text color={'gray.500'} fontFamily="Amiri" fontStyle={'italic'}>
+          A little about me
+        </Text> */}
         <Heading
           fontSize={{
             base: '4xl',
@@ -24,11 +24,10 @@ function Home() {
           mb="1rem"
           fontWeight="900"
         >
-          My background as developer
+          How in three months I didn't become a developer
         </Heading>
         <Text fontSize={'md'} fontStyle="italic" color={'gray.500'}>
-          Something about my growth in this programing world, and how in three months I didn't
-          become a developer.
+          In this article I tell you about my growth and my background as a developer.
         </Text>
       </Flex>
       <Box mb={8}>
@@ -58,11 +57,11 @@ function Home() {
             <br />
           </Text>
           <Text fontWeight={'bold'}>What does it mean to be ready?</Text>
-          <br />
           <Box mb={8}>
             {' '}
             <Image src={obstacle} />
           </Box>
+          <br />
           <Text>
             Well I do not have the answer, the most accurate, in my experience, would be to say that
             you are never ready, and this is something I understood recently and I want to share.
@@ -76,7 +75,6 @@ function Home() {
           </Text>
           <br />
           <Text fontWeight={'bold'}>Time and patience are critical</Text>
-          <br />
           <Text>
             At the beginning, everything may seem complicated and confusing, but with time and
             consistency, everything starts to become simpler.
@@ -87,16 +85,15 @@ function Home() {
             {' '}
             <Image src={reactImg} />
           </Box>
+          <br />
           <Text>
             Each project I do is an instance of learning in which I am always implementing a new
             technology. Of course there are many of these and along the way you make decisions about
             the tools you incorporate to your stack. In this case React is my favorite, to which I
             have dedicated hundreds of hours of work.
           </Text>
-
           <br />
           <Text fontWeight={'bold'}>Early projects</Text>
-          <br />
           <Text>
             My first projects started with a simple database provided by firebase platform, which
             makes it easy to persist data and removes the complexity of setting up a server. I had
@@ -124,12 +121,17 @@ function Home() {
           </Flex>
           <br />
           <Text mr={'2rem'}>
-            This one is pretty simple, it contains a home page that shows the products, a product
-            detail page, shopping cart and check out. It was styled with style components and used
-            firebase as a NoSQL database.
+            This one above is pretty simple, it contains a home page that shows the products, a
+            product detail page, shopping cart and check out. It was styled with style components
+            and used firebase as a NoSQL database.
+          </Text>
+          <Text>
+            Later I started to create my own servers and implement SQL and NoSQL databases, which
+            allowed me to dig deeper and understand a lot of concepts and functions that I had
+            ignored so far. The next project was a personal finance app. It was made with React,
+            Chakra-ui , Express and MySql as a NoSql database.
           </Text>
           <br />
-
           <Flex py="1.25rem" bg="#ffd6c1" px="2rem" justify="center" alignContent={'center'}>
             <Flex w="10rem" h={'auto'}>
               <Image src={balance} objectFit="cover" />
@@ -145,13 +147,6 @@ function Home() {
               <Text fontSize={'.875rem'}>Allows you to keep track your income and expenses.</Text>
             </Flex>
           </Flex>
-          <br />
-          <Text>
-            Later I started to create my own servers and implement SQL and NoSQL databases, which
-            allowed me to dig deeper and understand a lot of concepts and functions that I had
-            ignored so far. The next project was a personal finance app. It was made with React,
-            Chakra-ui , Express and MySql as a noSql database.
-          </Text>
           <br />
           <Text fontWeight={'bold'}>Finally</Text>
           <br />
