@@ -82,8 +82,8 @@ function Aside() {
         <Divider my=".5rem" />
 
         <Text>
-          Hi! I´m a web developer from Córdoba, Argentina. I like design, programming, pizza and
-          music. Currently looking for work experience, so if you are interested you can {''}
+          Hi! I´m a web developer from Córdoba, Argentina. I like design and programming. Currently
+          looking work experience, so if you are interested you can {''}
           <Link color={'black'} fontWeight="bold" to="/contact" as={RouterLink}>
             contact me.{' '}
           </Link>

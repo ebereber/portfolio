@@ -1,6 +1,11 @@
 import { Box, HStack, Icon, Link } from '@chakra-ui/react'
 import React from 'react'
-import { HiOutlineHome, HiOutlineFolderOpen, HiOutlineMail } from 'react-icons/hi'
+import {
+  HiOutlineHome,
+  HiOutlineFolderOpen,
+  HiOutlineMail,
+  HiOutlineDocumentText
+} from 'react-icons/hi'
 import { Link as LinkRouter, useLocation } from 'react-router-dom'
 import { changeColor } from '../../utils/changeColor'
 
@@ -10,6 +15,7 @@ function NavBottom() {
   const LinkItems = [
     { name: 'Home', icon: HiOutlineHome, path: '/' },
     { name: 'Projects', icon: HiOutlineFolderOpen, path: '/projects' },
+    { name: 'Writtings', icon: HiOutlineDocumentText, path: '/writtings' },
     { name: 'Contact', icon: HiOutlineMail, path: '/contact' }
   ]
 

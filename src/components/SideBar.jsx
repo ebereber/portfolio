@@ -9,13 +9,14 @@ import {
   Tooltip,
 } from '@chakra-ui/react'
 import { Link as LinkRouter, useLocation } from 'react-router-dom'
-import{HiOutlineHome, HiOutlineFolderOpen, HiOutlineMail} from "react-icons/hi"
+import{HiOutlineHome, HiOutlineFolderOpen, HiOutlineMail, HiOutlineDocumentText} from "react-icons/hi"
 import { changeColor } from '../utils/changeColor'
 
 
 const LinkItems = [
   { name:"Home",icon: HiOutlineHome, path:"/"},
   { name:"Projects",icon: HiOutlineFolderOpen, path:"/projects"},
+  { name:"Writtings",icon: HiOutlineDocumentText, path:"/writtings"},
   { name:"Contact",icon: HiOutlineMail,  path:"/contact"}
 ]
 
