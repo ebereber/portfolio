@@ -28,11 +28,9 @@ function Home() {
       <Stack mt={'1rem'} fontFamily="Amiri" fontSize={'18px'}>
         <>
           <Text>
-            Hi there! My name is Eber, Im a frontend developer. I been developing my skills for the
-            past two years now, and I think Im ready for the next step. I enjoy working with react,
-            I love it. My firsts steps were in the ux world where I learn the fundamentals about
-            design and user experience, the desire to bring projects to life led me to learn how to
-            program.
+            Hi there! My name is Eber, Im a frontend developer. I enjoy working with react. My
+            firsts steps were in the ux world where I learn the fundamentals about design and user
+            experience, the desire to bring projects to life led me to learn how to program.
             <br />
             Recently I finish a fullsatck project where I have the lucky to work with a great team
             and to be introduce to new things like team work and stuff like data bases, set up a
