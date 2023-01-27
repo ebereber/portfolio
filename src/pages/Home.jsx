@@ -32,14 +32,11 @@ function Home() {
             firsts steps were in the ux world where I learn the fundamentals about design and user
             experience, the desire to bring projects to life led me to learn how to program.
             <br />
-            Recently I finish a fullsatck project where I have the lucky to work with a great team
-            and to be introduce to new things like team work and stuff like data bases, set up a
-            server and structure and work on a project with good practices.
+            Recently I finish a fullstack project where I had the lucky to work with a great team
+            and be introduce to the backend environment.
             <br />
-            <Link color={'black'} fontWeight="bold" to="/writtings" as={RouterLink}>
-              I wanted to make this introduction brief so as not to bore. I wrote in a more extended
-              version about my process of becoming a developer in case you are interested in reading
-              some more paragraphs.
+            <Link color={'black'} fontWeight="bold" to="/projects" as={RouterLink}>
+              You can see some of my work here.
             </Link>
           </Text>
         </>

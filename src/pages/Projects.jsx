@@ -47,7 +47,7 @@ function Projects() {
           align={'center'}
           m="auto"
         >
-          <Link href="#" _hover={{ opacity: 0.6 }}>
+          <Link href="https://github.com/ebereber/alkemy" _hover={{ opacity: 0.6 }}>
             <Flex>
               <Image src={balance} />
             </Flex>
