@@ -4,12 +4,12 @@ import React from 'react'
 
 function InfoUp() {
   const download = () => {
-    fetch('eber-resume-2022.pdf').then((response) => {
+    fetch('eber-resume.pdf').then((response) => {
       response.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob)
         let alink = document.createElement('a')
         alink.href = fileURL
-        alink.download = 'eber-resume-2022.pdf'
+        alink.download = 'eber-resume.pdf'
         alink.click()
       })
     })
